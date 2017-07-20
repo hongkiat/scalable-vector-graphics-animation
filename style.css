@@ -1,0 +1,40 @@
+/*Common Elements*/
+html {
+	background: #f9f9f9;
+}
+#wrapper h1 {
+	margin-bottom: 50px;
+}
+#wrapper h3 {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+}
+#wrapper section {
+	margin-bottom: 50px;
+	padding: 25px;
+}
+#wrapper pre	{
+	color: #777;
+	overflow: hidden;
+}
+#wrapper svg {
+	height: 250px;
+}
+#wrapper text {
+	display: block;
+	margin-bottom: 10px;
+}
+
+/*The Wrapper*/
+#wrapper {
+	width: 500px;
+	margin: 50px auto;
+}
+
+#wrapper section:target {
+	background-color: #eaeaea;
+	border: 1px solid #ccc;
+}
+
+/*SVG specific height*/
+

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>SVG: Using Animation - Hongkiat.com</title>
+
+<!--  jquery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../_nav/js/jquery.js"><\/script>')</script>
+
+<!-- demo scripts -->
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- nav script -->
+<script src="../_nav/js/nav.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<!-- nav meta -->
+<div class="demo-meta">
+  <h1 class="demo-title">SVG: Using Animation</h1>
+  <p class="demo-desc">SVG can also be animated, and in this demo we use CSS3 Animation to do so.</p>
+</div>
+
+<!-- demo content -->
+<div id="wrapper">
+
+<section id="basic">
+<h3>Basic Implementation</h3>
+
+<!-- Rectangle -->
+<h4>Rectangle</h4>
+<svg>
+  <rect width="200" height="200" fill="slategrey">
+    <animate attributeName="height" from="0" to="200" dur="3s"/>
+  </rect>
+</svg>
+<pre>
+&lt;svg&gt;
+&lt;rect width="200" height="200" fill="slategrey"&gt;
+&lt;animate attributeName="height" from="0" to="200" dur="3s"/&gt;
+&lt;/rect&gt;
+&lt;/svg&gt;
+</pre>
+
+<!-- Circle -->
+<h4>Circle</h4>
+<svg>
+  <circle r="100" cx="100" cy="100" fill="slategrey">
+    <animate attributeName="r" from="0" to="100" dur="3s"/>
+  </circle>
+</svg>
+<pre>
+&lt;svg&gt;
+&lt;circle r="100" cx="100" cy="100" fill="slategrey"&gt;
+&lt;animate attributeName="r" from="0" to="100" dur="3s"/&gt;
+&lt;/circle&gt;
+&lt;/svg&gt;
+</pre>
+</section>
+
+<section id="moving">
+<h3>Moving Element</h3>
+
+<h4>Rectangle</h4>
+<svg>
+  <rect x="0" y="0" width="200" height="200" fill="slategrey">
+    <animate attributeName="x" from="0" to="200" dur="3s" fill="freeze"/>
+  </rect>
+</svg>
+<pre>
+&lt;svg&gt;
+&lt;rect x="0" y="0" width="200" height="200" fill="slategrey"&gt;
+&lt;animate attributeName="x" from="0" to="200" dur="3s" fill="freeze"/&gt;
+&lt;/rect&gt;
+&lt;/svg&gt;
+</pre>
+
+<h4>Circle</h4>
+<svg>
+  <circle r="100" cx="100" cy="100" fill="slategrey">
+    <animate attributeName="cy" from="100" to="200" dur="3s" fill="freeze"/>
+  </circle>
+</svg>
+
+<pre>
+&lt;svg&gt;
+&lt;circle r="100" cx="100" cy="100" fill="slategrey"&gt;
+&lt;animate attributeName="cy" from="100" to="200" dur="3s" fill="freeze"/&gt;
+&lt;/circle&gt;
+&lt;/svg&gt;
+</pre>
+</section>
+
+<section id="multiple">
+<h3>Animate Multiple Attributes</h3>
+<svg>
+  <circle r="100" cx="110" cy="110" fill="slategrey" stroke="#000" stroke-width="7">
+    <animate attributeName="r" from="0" to="100" dur="3s"/>
+    <animate attributeName="stroke-width" from="0" to="10" dur="7s"/>
+  </circle>
+</svg>
+<pre>
+&lt;svg&gt;
+&lt;circle r="100" cx="110" cy="110" fill="slategrey" stroke="#000" stroke-width="7"&gt;
+&lt;animate attributeName="r" from="0" to="100" dur="3s"/&gt;
+&lt;animate attributeName="stroke-width" from="0" to="10" dur="7s"/&gt;
+&lt;/circle&gt;
+&lt;/svg&gt;
+</pre>
+</section>
+
+<section id="path">
+<h3>Following Path</h3>
+<svg>
+  <defs>
+    <path id="thepath" fill="none" stroke="#000000" d="M0.905,0.643c0,0,51.428,73.809,79.047,166.19s68.095,38.572,107.144-18.095
+  c39.047-56.667,72.381-92.382,113.333-42.381S335.5,178.5,374,200.5s82-18.5,97.5-33.5"/>
+  </defs>
+  <use xlink:href="#thepath" />
+  <circle r="15" cx="15" cy="15" fill="slategrey">
+  <animateMotion dur="5s" repeatCount="1">
+    <mpath xlink:href="#thepath"/>
+  </animateMotion>
+</svg>
+<pre>
+&lt;svg&gt;
+&lt;defs&gt;
+&lt;path id="thepath" fill="none" stroke="#000000" d="M0.905,0.643c0,0,51.428,73.809,79.047,166.19s68.095,38.572,107.144-18.095
+c39.047-56.667,72.381-92.382,113.333-42.381S335.5,178.5,374,200.5s82-18.5,97.5-33.5"/&gt;
+&lt;/defs&gt;
+&lt;circle r="15" cx="15" cy="15" fill="slategrey"&gt;
+&lt;animateMotion dur="3s"&gt;
+&lt;mpath xlink:href="#thepath"/&gt;
+&lt;/animateMotion&gt;
+&lt;/svg&gt;
+</pre>
+</section>
+
+<section id="transform">
+<h3>Transformation</h3>
+<svg>
+<rect width="200" height="200" fill="slategrey">
+  <animateTransform attributeName="transform" type="scale" from="0" to="1" dur="3s"/>
+</rect>
+</svg>
+<pre>
+&lt;svg&gt;
+&lt;rect width="200" height="200" fill="slategrey"&gt;
+&lt;animateTransform attributeName="transform" type="scale" from="0" to="1" dur="3s"/&gt;
+&lt;/rect&gt;
+&lt;/svg&gt;
+</pre>
+</section>
+
+</div>
+
+</body>
+</html>
